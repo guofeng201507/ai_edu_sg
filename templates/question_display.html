@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Questions</title>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+     tex2jax:
+        {inlineMath: [['$','$'], ['\\(','\\)']],
+         displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+         processEscapes: true
+        }
+        });
+    </script>
+    <script type="text/javascript"
+            src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+   <body>
+	  {% if result %}
+	     <h2>Questions</h2>
+         {% for element in result %}
+
+<!--               <tr>{{ element[1] }} </tr>-->
+<!--               <tr>{{ element[2] }} </tr>-->
+<!--               <tr>Difficulty:  {{ element[3] }} </tr>-->
+               <div>Question {{ element[0] }} :  {{ element[4] }} </div>
+               <div>Choice:  {{ element[5] }} </div>
+               <div>Answer {{ element[6] }} </div>
+<!--               <tr>Remarks {{ element[7] }} </tr>-->
+
+            </p>
+            <br>
+         {% endfor %}
+      {% else %}
+	  <p></p>
+	  <p align="center"><font size="6">No available information </font></p>
+	  <p align="center">Would you want to report a case? </p>
+		<p align="center"><a  href = "/report"><b>Report</b></a></p>
+	  <p align="center"><font size="6">Or </font></p>
+	  {% endif %}
+
+   </body>
+
+
+</html>
